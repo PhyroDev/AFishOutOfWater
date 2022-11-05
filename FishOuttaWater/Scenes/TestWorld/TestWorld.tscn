@@ -1,8 +1,25 @@
-[gd_scene load_steps=2 format=2]
+[gd_scene load_steps=3 format=2]
 
 [ext_resource path="res://Player/Player.tscn" type="PackedScene" id=1]
+[ext_resource path="res://Entities/Prototype/CrashableTest/CrashableTest.tscn" type="PackedScene" id=2]
 
 [node name="TestWorld" type="Node2D"]
 
 [node name="Player" parent="." instance=ExtResource( 1 )]
 position = Vector2( 277, 165 )
+
+[node name="CrashableTest" parent="." instance=ExtResource( 2 )]
+modulate = Color( 1, 0.027451, 0.027451, 1 )
+position = Vector2( -296, 236 )
+
+[node name="CrashableTest2" parent="." instance=ExtResource( 2 )]
+modulate = Color( 0, 1, 0.133333, 1 )
+position = Vector2( 302, -183 )
+
+[node name="CrashableTest3" parent="." instance=ExtResource( 2 )]
+modulate = Color( 0, 0, 0, 1 )
+position = Vector2( 551, 580 )
+
+[node name="CrashableTest4" parent="." instance=ExtResource( 2 )]
+modulate = Color( 0, 0.133333, 1, 1 )
+position = Vector2( -419, -263 )
