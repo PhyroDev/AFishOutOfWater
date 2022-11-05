@@ -11,6 +11,8 @@ var dashing = false
 func _input(event):
 	if event.is_action_pressed("LMB") and can_dash:
 		dash()
+		
+		$Camera2D.small_shake()
 
 func _physics_process(delta):
 	if position.distance_to(get_global_mouse_position()) > 6:
