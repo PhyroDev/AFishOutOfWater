@@ -9,13 +9,13 @@
 config_version=4
 
 _global_script_classes=[ {
-"base": "KinematicBody2D",
-"class": "Crashable",
+"base": "RigidBody2D",
+"class": "knockable",
 "language": "GDScript",
-"path": "res://Entities/Prototype/CrashableTest/CrashableTest.gd"
+"path": "res://Entities/Prototype/TestRigitBody/TestRigitBody.gd"
 } ]
 _global_script_class_icons={
-"Crashable": ""
+"knockable": ""
 }
 
 [application]

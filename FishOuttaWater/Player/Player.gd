@@ -26,7 +26,7 @@ func _physics_process(delta):
 	velocity = move_and_slide(velocity * speed * delta)
 
 func dash():
-	speed = default_speed * 20
+	speed = default_speed * 25
 	dashing = true
 	can_dash = false
 	$HitBox.monitoring = true

@@ -1,5 +1,14 @@
 extends Camera2D
 
+func _input(event):
+	if event.is_action_pressed("MSU"):
+		if zoom.x > 1:
+			zoom -= Vector2(0.1, 0.1) 
+	
+	if event.is_action_pressed("MSD"):
+		if zoom.x < 4:
+			zoom += Vector2(0.1, 0.1)
+
 func small_shake() -> void:
 	$CameraShake.start(0.2, 30, 4, 0)
 
