@@ -1,4 +1,5 @@
 extends Node
+class_name CameraShake
 
 const TRANS = Tween.TRANS_SINE
 const EASE = Tween.EASE_IN_OUT

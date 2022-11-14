@@ -5,39 +5,50 @@ var speed = default_speed
 
 var velocity = Vector2()
 
+onready var dash_bar = $Camera2D/Control/ProgressBar
+var dash_power 
 var can_dash = true
 var dashing = false
 
 func _input(event):
 	if event.is_action_pressed("LMB") and can_dash:
 		dash()
-		
-		$Camera2D.small_shake()
+	
+	if event.is_action_pressed("ui_cancel"):
+		$Camera2D/Control/PauseMenu.activate()
 
 func _physics_process(delta):
 	if position.distance_to(get_global_mouse_position()) > 6:
 		if not dashing:
-			look_at(get_global_mouse_position())
+			$Fish.look_at(get_global_mouse_position())
+			dash_bar.value += 0.5
+			$AnimationPlayer.play("Flop")
 	else:
 		return
 	
-	velocity = Vector2(1, 0).rotated(rotation)
+	velocity = Vector2(1, 0).rotated($Fish.rotation)
 	
 	velocity = move_and_slide(velocity * speed * delta)
 
 func dash():
-	speed = default_speed * 25
+	speed = default_speed * dash_bar.value / 4
+	dash_power = dash_bar.value / 4
+	dash_bar.value = 0
+	
 	dashing = true
 	can_dash = false
-	$HitBox.monitoring = true
+	$Fish/HitBox.monitoring = true
 	
 	yield(get_tree().create_timer(0.05), "timeout")
 	
 	speed = default_speed
 	dashing = false
-	$HitBox.monitoring = false
+	$Fish/HitBox.monitoring = false
 	
 	$DashCooldown.start()
 
 func _on_DashCooldown_timeout():
 	can_dash = true
+
+func die():
+	global_position = CheckpointManager.last_checkpoint

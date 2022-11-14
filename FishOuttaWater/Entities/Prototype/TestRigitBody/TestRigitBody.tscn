@@ -15,7 +15,7 @@ mode = 1
 mass = 0.816326
 gravity_scale = 0.0
 script = ExtResource( 2 )
-knockback_multiplyer = 20
+lifespan = 3
 
 [node name="Sprite" type="Sprite" parent="."]
 texture = ExtResource( 1 )
