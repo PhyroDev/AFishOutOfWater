@@ -3,6 +3,10 @@ extends Control
 func _ready():
 	visible = false
 
+func _input(event):
+	if event.is_action_pressed("ui_cancel"):
+		activate()
+
 func activate():
 	if not get_tree().paused:
 		visible = true

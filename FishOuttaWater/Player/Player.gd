@@ -13,15 +13,12 @@ var dashing = false
 func _input(event):
 	if event.is_action_pressed("LMB") and can_dash:
 		dash()
-	
-	if event.is_action_pressed("ui_cancel"):
-		$Camera2D/Control/PauseMenu.activate()
 
 func _physics_process(delta):
 	if position.distance_to(get_global_mouse_position()) > 6:
 		if not dashing:
 			$Fish.look_at(get_global_mouse_position())
-			dash_bar.value += 0.5
+			dash_bar.value += 0.75
 			$AnimationPlayer.play("Flop")
 	else:
 		return
@@ -31,7 +28,7 @@ func _physics_process(delta):
 	velocity = move_and_slide(velocity * speed * delta)
 
 func dash():
-	speed = default_speed * dash_bar.value / 4
+	speed = default_speed * dash_bar.value / 3
 	dash_power = dash_bar.value / 4
 	dash_bar.value = 0
 	

@@ -27,7 +27,7 @@ _global_script_class_icons={
 [application]
 
 config/name="FishOuttaWater"
-run/main_scene="res://Scenes/TestWorld/TestWorld.tscn"
+run/main_scene="res://Scenes/MainMenu/MainMenu.tscn"
 config/icon="res://icon.png"
 
 [autoload]
