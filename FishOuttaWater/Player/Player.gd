@@ -1,6 +1,6 @@
 extends KinematicBody2D
 
-export var default_speed = 10000
+export var default_speed = 2000
 var speed = default_speed
 
 var velocity = Vector2()
@@ -18,6 +18,7 @@ func _physics_process(delta):
 	if position.distance_to(get_global_mouse_position()) > 6:
 		if not dashing:
 			$Fish.look_at(get_global_mouse_position())
+			$CollisionShape2D.look_at(get_global_mouse_position())
 			dash_bar.value += 0.75
 			$AnimationPlayer.play("Flop")
 	else:

@@ -24,13 +24,13 @@ texture = ExtResource( 2 )
 [node name="TestRigitBodies" type="Node" parent="."]
 
 [node name="TestRigitBody" parent="TestRigitBodies" instance=ExtResource( 3 )]
-position = Vector2( 35, 451 )
+position = Vector2( 3, 359 )
 
 [node name="TestRigitBody2" parent="TestRigitBodies" instance=ExtResource( 3 )]
-position = Vector2( 111, -352 )
+position = Vector2( 637, 8 )
 
 [node name="TestRigitBody3" parent="TestRigitBodies" instance=ExtResource( 3 )]
-position = Vector2( 836, 149 )
+position = Vector2( 0, 1 )
 
 [node name="TestRigitBody4" parent="TestRigitBodies" instance=ExtResource( 3 )]
 position = Vector2( -256, 641 )
@@ -39,7 +39,7 @@ position = Vector2( -256, 641 )
 position = Vector2( 197, 730 )
 
 [node name="TestRigitBody6" parent="TestRigitBodies" instance=ExtResource( 3 )]
-position = Vector2( 850, 326 )
+position = Vector2( 640, 359 )
 
 [node name="TestRigitBody7" parent="TestRigitBodies" instance=ExtResource( 3 )]
 position = Vector2( -176, -213 )
@@ -54,3 +54,10 @@ position = Vector2( 354, 235 )
 
 [node name="Player" parent="." instance=ExtResource( 1 )]
 position = Vector2( 1303, 229 )
+
+[node name="Label" type="Label" parent="."]
+margin_left = 1230.0
+margin_top = 71.0
+margin_right = 1364.0
+margin_bottom = 85.0
+text = "This is the test world"
